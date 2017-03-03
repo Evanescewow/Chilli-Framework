@@ -35,13 +35,7 @@ public:
 private:
 	void ComposeFrame();
 	void UpdateModel();
-	/********************************/
-	/*  User Functions              */
-	/********************************/
 private:
 	MainWindow& wnd;
 	Graphics gfx;
-	/********************************/
-	/*  User Variables              */
-	/********************************/
 };
