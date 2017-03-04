@@ -22,5 +22,4 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
-	gfx.DrawCircle(vec1, 200, Colors::Blue);
 }

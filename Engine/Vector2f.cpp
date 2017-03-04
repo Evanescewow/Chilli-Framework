@@ -1,4 +1,5 @@
 #include "Vector2f.h"
+#include "math.h"
 
 //construct
 Vector2f::Vector2f(float in_x, float in_y)
@@ -17,6 +18,23 @@ int Vector2f::getX() const
 int Vector2f::getY() const
 {
 	return (int)y;
+}
+
+Vector2f Vector2f::GetNormalised() const
+{
+	if (!(x == 0.0f && y == 0.0f))
+	{
+		return *this * (1.0f / (float)sqrt(x*x + y*y));
+	}
+	else
+	{
+		return *this;
+	}
+}
+
+Vector2f& Vector2f::Normalise()
+{
+	return *this = GetNormalised();
 }
 
 //operators
