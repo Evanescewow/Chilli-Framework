@@ -18,4 +18,5 @@ private:
 private:
 	MainWindow& wnd;
 	Graphics gfx;
+	const Vector2f vec1 = { 200, 200 };
 };

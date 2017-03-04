@@ -47,6 +47,11 @@ public:
 	{
 		DrawRect(location.getX(), location.getY(), width, height, c);//different type of DrawRect
 	}
+	void DrawCircle(Vector2f location, int radius, Color c);
+	void DrawCircle(int x, int y, int radius, Color c)
+	{
+		DrawCircle({ (float)x, (float)y }, radius, c);
+	}
 	~Graphics();
 private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;

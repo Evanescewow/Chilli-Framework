@@ -220,6 +220,21 @@ Graphics::Graphics( HWNDKey& key )
 		_aligned_malloc( sizeof( Color ) * Graphics::ScreenWidth * Graphics::ScreenHeight,16u ) );
 }
 
+void Graphics::DrawCircle(Vector2f location, int radius, Color c)
+{
+	for (int i = 0; i < 2 * radius; i++)
+	{
+		for (int j = 0; j < 2 * radius; j++)
+		{
+			Vector2f tempVec = { float(i* -1 + radius), float(j * -1 + radius) }; //location during looping
+			if (tempVec.getX() * tempVec.getX() + tempVec.getY() * tempVec.getY() <= radius * radius)//pythag compare with hypotanuse (radius)
+			{
+				PutPixel(location - (float)radius + Vector2f((float)i, (float)j), c); //draw when within radius
+			}
+		}
+	}
+}
+
 Graphics::~Graphics()
 {
 	// free sysbuffer memory (aligned free)
